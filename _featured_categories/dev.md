@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Dev
+title: dev
 slug: dev
 menu: true
 submenu: true
 order: 3
 description: >
-  개발이야기
+  development
 ---

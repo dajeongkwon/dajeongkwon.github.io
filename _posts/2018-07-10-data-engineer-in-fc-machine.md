@@ -3,7 +3,7 @@ layout: post
 title:  "rnn 로 단어예측 모델 만들기"
 subtitle:   "rnn 로 단어예측 모델 만들기"
 categories: data
-tags: tensorflow
+tags: desproj
 comments: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "데이터 엔지니어 수업 정리 180622"
 subtitle:   "패캠 데이터엔지니어 수업"
 categories: data
-tags: fcdes
+tags: desproj
 comments: true
 ---
 수업 내용을 정리 한 것
