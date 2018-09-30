@@ -92,6 +92,7 @@
 </script>
 
 <!-- tipue search set -->
+<!--
 {% if page.tipue_search_active or layout.tipue_search_active %}
 <link rel="stylesheet" href="{{ "/assets/tipuesearch/css/normalize.css" | relative_url }}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -100,6 +101,14 @@
 <script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
 <script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
 {% endif %}
+-->
+<link rel="stylesheet" href="/assets/tipuesearch/css/tipuesearch.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{% if page.tipue_search_active %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/tipuesearch/tipuesearch_content.js"></script>
+<script src="/assets/tipuesearch/tipuesearch_set.js"></script>
+<script src="/assets/tipuesearch/tipuesearch.min.js"></script>
 
 
 <!--[if lt IE 9]>
