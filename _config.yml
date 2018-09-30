@@ -2,7 +2,7 @@
 #  User configuration
 # -----------------------------------------------------------------------------
 
-title:               DajenogKwon's Blog
+title:               VERYGOOD:D
 
 # The unique resource location of your page.
 # Set to `https://<username>.github.io` when hosting on GitHub Pages
@@ -16,12 +16,12 @@ timezone: Asia/Seoul # 지역 시간 설정
 baseurl:             ""
 
 # A very short description of your page
-tagline:             정리 & 기록 _config tag
+tagline:             dajeongkwon's blog
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  정리 & 기록 _config desc
+  dajeongkwon's blog
 
 
 # This should be the same author as first entry in `_data/authors.yml`
@@ -30,7 +30,7 @@ author:
   email:             dajeongkwon@naver.com
 
 # Fallback image and color
-image:               /assets/img/nap.jpg
+image:               /assets/img/bg_left.jpg
 color:               '#4f86aa'
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
