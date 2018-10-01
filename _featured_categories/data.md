@@ -1,10 +1,10 @@
 ---
 layout: list
-title: data
+title: DATA
 slug: data
 menu: true
 submenu: true
 order: 2
 description: >
-  DATA
+  data
 ---
