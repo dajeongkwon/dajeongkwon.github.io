@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
 title: Pipelining
-slug: dpc
+slug: pipeline
 category: data
 menu: false
 order: 1
