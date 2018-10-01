@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: data pipelining
-slug: fcdpc
+title: Pipelining
+slug: dpc
 category: data
 menu: false
 order: 1
