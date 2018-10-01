@@ -6,5 +6,5 @@ menu: true
 submenu: true
 order: 2
 description: >
-  data
+  DATA
 ---
