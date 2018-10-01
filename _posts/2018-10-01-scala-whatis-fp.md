@@ -105,7 +105,7 @@ case class Charge(cc: CreditCard, amount: Double) {
 ```
 
 여기서 Charge를 일급(first-class)값으로 만들면, 같은 카드에 대한 청구건들을 하나의 List[Charge]로 취합하는 함수를 작성할수 있다.<br>
-[일급값이란?](http://blog.doortts.com/m/135)<br>
+[일급값이란?](http://blog.doortts.com/m/135) (출처:http://blog.doortts.com/m/135) <br>
 함수가 일급 객체가 되려면 함수 자체를 파라미터로 넘기고, 결과값으로 함수가 오는 것이 가능해야 한다. 
 ```
 어떤 객체(일반명사)가 있을때 다음 조건을 만족하면 일급 객체로 간주한다.
