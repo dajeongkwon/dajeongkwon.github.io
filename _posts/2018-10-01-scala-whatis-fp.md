@@ -68,11 +68,12 @@ class Cafe {
   
   def buyCoffees(cc: CreditCard, n: Int): (List[Coffee], Charge) = {
     // List.fill(n)(x) : x의 복사본 n개로 이루어진 List를 생성
-    val purchases: List[(Coffee, Charge)] = List.fill(n)(buyCoffee(cc))
-    
     // unzip : 쌍들의 목록 => 목록들의 쌍
-    // reduce : 청구건 두개 c1, c2를 combine 결합하는 과정을 반복적으로 수행 => 결국 하나의 청구건을 만들어 냄 
-    val (coffees, charges) = purchases.unzip(coffees, charges.reduce((c1, c2) => c1.combine(c2)))
+    // reduce : 청구건 두개 c1, c2를 결합하는 과정을 반복적으로 수행 => 하나의 청구건을 반환
+    
+    val purchases: List[(Coffee, Charge)] = List.fill(n)(buyCoffee(cc))    
+    val (coffees, charges) = 
+    purchases.unzip(coffees, charges.reduce((c1, c2) => c1.combine(c2)))
   }
 }
 ```
@@ -81,9 +82,10 @@ class Cafe {
 커피를 컵에 담는다.
 커피가 담긴 컵과, 들고간 신용카드로 내 커피의 가격만큼 지불한다는 내용의 청구서를 준다.
 
-카페에서 커피들을 사겠다. 신용카드를 들고 n개 사겠다고 알려줄 것이고, 목적은 커피 여러개와 그에 따른 청구서를 받는것.
+카페에서 커피들을 사겠다. 신용카드를 들고 n개 사겠다 말한다, 목적은 커피들과 청구서 하나를 받는것.
 커피를 사는 함수의 결과를 n개 복사한다. [(커피1,청구서1)(커피2,청구서2)..(커피n,청구서n)]
-unzip으로 커피들을 하나의 리스트로 모으고, 청구서를 결합하여 청구서 하나로 만든다. ([커피1,커피2,..커피n],결합청구서)
+unzip으로 커피들을 하나의 리스트로 모으고, 청구서를 결합하여 청구서 하나로 만든다. 
+([커피1,커피2,..커피n],결합청구서)
 ```
 ```
 case class Charge(cc: CreditCard, amount: Double) {
@@ -97,8 +99,9 @@ case class Charge(cc: CreditCard, amount: Double) {
 ```
 청구서는 어떤 신용카드로 얼마를 지불할 것인지가 쓰여있다.
 청구서를 합치는 함수(combine)
-  청구서가 다른청구서(other)의 신용카드와 같은 신용카드라면, 지불할 금액을 합쳐서 하나의 청구서를 만들어준다.
-  만약 다른 신용카드라면 합칠수 없다고 알려준다.
+  청구서가 다른청구서(other)의 신용카드와 
+  같은 신용카드라면, 지불할 금액을 합쳐서 하나의 청구서를 만들어준다.
+  다른 신용카드라면 합칠수 없다고 알려준다.
 ```
 
 여기서 Charge를 일급(first-class)값으로 만들면, 같은 카드에 대한 청구건들을 하나의 List[Charge]로 취합하는 함수를 작성할수 있다.<br>
@@ -118,6 +121,9 @@ def coalesce(charges: List[Charge]): List[Charge] =
 ```
 ```
 같은 카드끼리 청구서를 합쳐보자. 청구서 리스트를 받을 것이고, 목적은 카드별로 청구서를 합쳐 받는것.
-청구서를 카드로 그룹화 한다. 반복적으로 돌면서(map) 청구서 두개를 결합하여(combine) 하나로 만든다(reduce). 카드별 청구서를 리스트로 만든다.
+청구서를 
+  카드로 그룹화 한다(groupBy) 
+  반복적으로 돌면서(map) 
+  청구서 두개를 결합하여(combine) 하나로 합친다(reduce)
+  카드별 청구서를 리스트로 만든다(toList)
 ```
-
