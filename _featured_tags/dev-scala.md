@@ -1,6 +1,6 @@
 ---
 layout: tag-blog
-title: scala
+title: Scala
 slug: scala
 category: dev
 menu: false
