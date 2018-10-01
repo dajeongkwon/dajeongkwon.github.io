@@ -67,10 +67,6 @@ class Cafe {
   }
   
   def buyCoffees(cc: CreditCard, n: Int): (List[Coffee], Charge) = {
-    // List.fill(n)(x) : x의 복사본 n개로 이루어진 List를 생성
-    // unzip : 쌍들의 목록 => 목록들의 쌍
-    // reduce : 청구건 두개 c1, c2를 결합하는 과정을 반복적으로 수행 => 하나의 청구건을 반환
-    
     val purchases: List[(Coffee, Charge)] = List.fill(n)(buyCoffee(cc))    
     val (coffees, charges) = 
     purchases.unzip(coffees, charges.reduce((c1, c2) => c1.combine(c2)))
@@ -82,8 +78,14 @@ class Cafe {
 커피를 컵에 담는다.
 커피가 담긴 컵과, 들고간 신용카드로 내 커피의 가격만큼 지불한다는 내용의 청구서를 준다.
 
+
+// List.fill(n)(x) : x의 복사본 n개로 이루어진 List를 생성
+// unzip : 쌍들의 목록 => 목록들의 쌍
+// reduce : 청구건 두개 c1, c2를 결합하는 과정을 반복적으로 수행 => 하나의 청구건을 반환
+
 카페에서 커피들을 사겠다. 신용카드를 들고 n개 사겠다 말한다, 목적은 커피들과 청구서 하나를 받는것.
-커피를 사는 함수의 결과를 n개 복사한다. [(커피1,청구서1)(커피2,청구서2)..(커피n,청구서n)]
+커피를 사는 함수의 결과를 n개 복사한다. 
+[(커피1,청구서1)(커피2,청구서2)..(커피n,청구서n)]
 unzip으로 커피들을 하나의 리스트로 모으고, 청구서를 결합하여 청구서 하나로 만든다. 
 ([커피1,커피2,..커피n],결합청구서)
 ```
